@@ -5,41 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="music.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   </head>
     <body>
       <div class="container-fluid">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+
         <div class="row">
           <div class="col-md-8" id="affdex_elements" style="width:680px;height:480px;"></div>
           <div class="col-md-4">
             <div style="height:25em;">
-              <strong>EMOTION TRACKING RESULTS</strong>
-              <div id="results" style="word-wrap:break-word;"></div>
-              <h1><div id="emoticon" style="word-wrap:break-word;"></div></h1>
+              <!--<strong>EMOTION TRACKING RESULTS</strong>
+              <div id="results" style="word-wrap:break-word;"></div>-->
+              <center><h1><div id="emoticon" style="word-wrap:break-word;"></div></h1></center>
             </div>
-            <div>
+            <!-- <div>
               <strong>DETECTOR LOG MSGS</strong>
-            </div>
-            <div id="logs"></div>
+            </div> -->
+            <!--<div id="logs"></div>-->
           </div>
         </div>
         <div>
-          <button id="start" onclick="onStart()">Start</button>
-          <button id="stop" onclick="onStop()">Stop</button>
-          <button id="reset" onclick="onReset()">Reset</button>
-          <h3>Affectiva JS SDK CameraDetector to track different emotions.</h3>
-          <p>
-            <strong>Instructions</strong>
-            </br>
-            Press the start button to start the detector.
-            <br/> When a face is detected, the probabilities of the different emotions are written to the DOM.
-            <br/> Press the stop button to end the detector.
-          </p>
+        <div class="row">
+          <div class="col-sm-4">
+              <button class="btn btn-success btn-block btn-lg" id="start" onclick="onStart()"><span class="glyphicon glyphicon-facetime-video"></span>
+              </button>
+            </div>
+            <div class="col-sm-4">
+
+              <button class="btn btn-danger btn-block btn-lg" id="stop" onclick="onStop()"><span class="glyphicon glyphicon-stop"></span></button>
+</div>
+              <div class="col-sm-4">
+
+              <button class="btn btn-warning  btn-block btn-lg" id="reset" onclick="onReset()"><span class="glyphicon glyphicon-refresh"></span></button>
+</div>
         </div>
+        </div>
+
+        <br>
+        <div class="row">
+        <audio id="musicControl" class="btn-lg btn-block" controls>
+          <source src="music/soothing.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
       </div>
-      <audio id="musicControl"  controls>
-        <source src="music/soothing.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-      </audio>
+    </div>
+      <div class="col-md-4">
+      </div>
+      </div>
+
     </body>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
