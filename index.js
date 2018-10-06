@@ -79,13 +79,13 @@
         // log('#results', "Timestamp: " + timestamp.toFixed(2));
         // log('#results', "Number of faces found: " + faces.length);
         if (faces.length > 0) {
-          var musicControl=document.getElementById('musicControl');
+          // var musicControl=document.getElementById('musicControl');
           $.each(faces[0].emotions, function(key, value) {
               // console.log(key, value);
               if(key=='joy'){
                 if(value>0.05 ){
                   console.log("play happy music");
-                  musicControl.play();
+                  document.getElementById('musicControl').play();
                 }
               }
           });
