@@ -1,7 +1,7 @@
       // SDK Needs to create video and canvas nodes in the DOM in order to function
       // Here we are adding those nodes a predefined div.
       var divRoot = $("#affdex_elements")[0];
-      var width = 640;
+      var width = 600;
       var height = 480;
       var faceMode = affdex.FaceDetectorMode.LARGE_FACES;
       //Construct a CameraDetector and specify the image width / height and face detector mode.
@@ -79,30 +79,44 @@
         // log('#results', "Timestamp: " + timestamp.toFixed(2));
         // log('#results', "Number of faces found: " + faces.length);
         if (faces.length > 0) {
-          console.log(faces[0].emotions);
+          // console.log(faces[0].emotions);
+          var musicControl=document.getElementById('musicControl');
+          var musicControlSource=document.getElementById('musicControlSource');
           $.each(faces[0].emotions, function(key, value) {
               // console.log("key="+key+", value="+ value);
-              if(key=='joy' || key=='surprise'){
-                if(value>80){
+              if(key=='joy'){
+                if(value>80 && musicControl.duration > 0 && musicControl.paused){
                   // console.log(value);
-                  console.log("play sad music");
-                  document.getElementById('musicControlSource').src="music/sad.mp3";
-                  document.getElementById('musicControl').load();
+                  console.log("In joy section");
+                  musicControlSource.src="music/happy.mp3";
+                  musicControl.load();
                   setTimeout(
                       function(){
-                        document.getElementById('musicControl').play();
+                        musicControl.play();
                     }, 1000);
                 }
               }
               if(key=='sadness'){
-                if(value>0.80){
+                if(value>0.80 && musicControl.duration > 0 && musicControl.paused){
                   // console.log(value);
-                  console.log("play happy music");
-                  document.getElementById('musicControlSource').src="music/happy.mp3";
-                  document.getElementById('musicControl').load();
+                  console.log("In sadness section");
+                  musicControlSource.src="music/sad.mp3";
+                  musicControl.load();
                   setTimeout(
                       function(){
-                        document.getElementById('musicControl').play();
+                          musicControl.play();
+                    }, 1000);
+                }
+              }
+              if(key=='contempt' || key=='surprise' || key=='fear' || key=='engagement'||key=='disgust'||key=='valence'){
+                if(value>2 && musicControl.duration > 0 && musicControl.paused){
+                  // console.log(value);
+                  console.log("In angry section");
+                  musicControlSource.src="music/angry.mp3";
+                  musicControl.load();
+                  setTimeout(
+                      function(){
+                        musicControl.play();
                     }, 1000);
                 }
               }
