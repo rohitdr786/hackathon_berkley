@@ -4,6 +4,7 @@
       var width = 656;
       var height = 480;
       var songPlaying='1';
+      var song=0;
       var faceMode = affdex.FaceDetectorMode.LARGE_FACES;
       //Construct a CameraDetector and specify the image width / height and face detector mode.
       var detector = new affdex.CameraDetector(divRoot, width, height, faceMode);
@@ -108,9 +109,11 @@
 //
 //         }, 20000);
 
+          if(musicControl.currentTime>10){
+            song=0;
+          }
 
-          var song=0;
-          if(musicControl.currentTime>10 || musicControl.currentTime==0){
+          if((musicControl.currentTime>10 || musicControl.currentTime==0)&&song==0){
             $.each(faces[0].emotions, function(key, value) {
                 // console.log("key="+key+", value="+ value);console.log(
                 if(key=='joy' && value>80){
@@ -125,10 +128,10 @@
                   }*/
                 } else{
                 if(key=='sadness'){
-                  if(value>0.40 && musicControl.duration > 0 && (musicControl.currentTime>10 || musicControl.currentTime==0)  ){
+                  if(value>0.60 && musicControl.duration > 0 && (musicControl.currentTime>10 || musicControl.currentTime==0)  ){
                     // console.log(value);
                     console.log(songPlaying+" this");
-
+                    song=1;
                     console.log("In sadness section");
                     if(songPlaying=='1'){
                       document.getElementById(songPlaying).class="list-group-item";
@@ -159,6 +162,7 @@
                   if(value>2 && musicControl.duration > 0 && (musicControl.currentTime>10 || musicControl.currentTime==0)){
                     // console.log(value);
                     console.log("In angry section");
+                    song=1;
                     if(songPlaying=='4'){
                       document.getElementById(songPlaying).class="list-group-item";
                       songPlaying='5';
