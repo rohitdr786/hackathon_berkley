@@ -79,6 +79,24 @@
         // log('#results', "Timestamp: " + timestamp.toFixed(2));
         // log('#results', "Number of faces found: " + faces.length);
         if (faces.length > 0) {
+          var musicControl=document.getElementById('musicControl');
+          $.each(faces[0].emotions, function(key, value) {
+              // console.log(key, value);
+              if(key=='joy'){
+                if(value>0.05 ){
+                  console.log("play happy music");
+                  musicControl.play();
+                }
+              }
+          });
+        // faces[0].emotions.fo(function(key,val){
+        //   if(key=='sad'){
+        //     console.log('sad='+key+' val='+val);
+        //     if(val>50){
+        //       console.log("Play ");
+        //     }
+        //   }
+        // });
           // log('#results', "Appearance: " + JSON.stringify(faces[0].appearance));
           // log('#results', "Emotions: " + JSON.stringify(faces[0].emotions, function(key, val) {
             // console.log(val);
