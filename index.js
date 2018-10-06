@@ -75,18 +75,21 @@
       //Faces object contains probabilities for all the different expressions, emotions and appearance metrics
       detector.addEventListener("onImageResultsSuccess", function(faces, image, timestamp) {
         $('#results').html("");
-        log('#results', "Timestamp: " + timestamp.toFixed(2));
-        log('#results', "Number of faces found: " + faces.length);
+        $('#emoticon').html("");
+        // log('#results', "Timestamp: " + timestamp.toFixed(2));
+        // log('#results', "Number of faces found: " + faces.length);
         if (faces.length > 0) {
-          log('#results', "Appearance: " + JSON.stringify(faces[0].appearance));
-          log('#results', "Emotions: " + JSON.stringify(faces[0].emotions, function(key, val) {
-            console.log(val);
-            return val.toFixed ? Number(val.toFixed(0)) : val;
-          }));
-          log('#results', "Expressions: " + JSON.stringify(faces[0].expressions, function(key, val) {
-            return val.toFixed ? Number(val.toFixed(0)) : val;
-          }));
+          // log('#results', "Appearance: " + JSON.stringify(faces[0].appearance));
+          // log('#results', "Emotions: " + JSON.stringify(faces[0].emotions, function(key, val) {
+            // console.log(val);
+            // return val.toFixed ? Number(val.toFixed(0)) : val;
+          // }));
+          // log('#results', "Expressions: " + JSON.stringify(faces[0].expressions, function(key, val) {
+            // return val.toFixed ? Number(val.toFixed(0)) : val;
+          // }));
           log('#results', "Emoji: " + faces[0].emojis.dominantEmoji);
+          log('#emoticon', "Emoji: " + faces[0].emojis.dominantEmoji);
+
           drawFeaturePoints(image, faces[0].featurePoints);
         }
       });
