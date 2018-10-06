@@ -12,16 +12,34 @@
     <body>
       <div class="container-fluid">
         <div class="col-md-4">
+          <div class="panel panel-warning marg">
+  <div class="panel-heading">
+    <h3 class="panel-title">  <h2> <span class="glyphicon glyphicon-headphones"></span> My PlayList </h2></h3>
+  </div>
+  <div class="panel-body">
+    <i> Life is a journey! - Me </i>
+  </div>
+    <ul class="list-group">
+   <li id="1" class="list-group-item active"> <span class="glyphicon glyphicon-music"></span> Feeling Good - Michael Buble</li>
+   <li id="2" class="list-group-item"> <span class="glyphicon glyphicon-music"></span> The House of the Rising Sun</li>
+   <li id="3" class="list-group-item"> <span class="glyphicon glyphicon-music"></span> The Sound of Silence - Simon & Garfunkel</li>
+   <li id="4"  class="list-group-item"><span class="glyphicon glyphicon-music"></span> Happy - Pharrell Williams</li>
+   <li id="5" class="list-group-item"><span class="glyphicon glyphicon-music"></span> Surfin' U.S.A. - The Beach Boys</li>
+   <li id="6" class="list-group-item"><span class="glyphicon glyphicon-music"></span> Can't Stop the Feeling! - Justin Timberlake</li>
+ </ul>
+
+</div>
+
         </div>
         <div class="col-md-4">
 
-        <div class="row">
-          <div class="col-md-8" id="affdex_elements" style="width:680px;height:480px;"></div>
-          <div class="col-md-4">
+        <div class="row marg1">
+          <div class="row" id="affdex_elements" style="width:656px;height:480px;"></div>
+          <div class="row emoji">
             <div style="height:25em;">
               <!--<strong>EMOTION TRACKING RESULTS</strong>
               <div id="results" style="word-wrap:break-word;"></div>-->
-              <center><h1><div id="emoticon" style="word-wrap:break-word;"></div></h1></center>
+              <center><h1><div id="emoticon" style="word-wrap:break-word;">                               </div></h1></center>
             </div>
             <!-- <div>
               <strong>DETECTOR LOG MSGS</strong>
@@ -29,7 +47,7 @@
             <!--<div id="logs"></div>-->
           </div>
         </div>
-        <div>
+        <div class="row">
         <div class="row">
           <div class="col-sm-4">
               <button class="btn btn-success btn-block btn-lg" id="start" onclick="onStart()"><span class="glyphicon glyphicon-facetime-video"></span>
@@ -54,6 +72,10 @@
       Your browser does not support the audio element.
       </audio>
       </div>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
     </body>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

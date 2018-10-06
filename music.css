@@ -23,5 +23,20 @@ head, body {
 }
 
 div#emoticon{
-  font-size: 95px;
+  font-size: 240px;
+
+  color: green;
+}
+div.emoji{
+  position: relative;
+  height: 200 px;
+}
+.marg{
+  margin-top: 50px;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.marg1{
+    margin-top: 50px;
 }

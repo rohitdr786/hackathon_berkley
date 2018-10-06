@@ -79,31 +79,13 @@
         // log('#results', "Timestamp: " + timestamp.toFixed(2));
         // log('#results', "Number of faces found: " + faces.length);
         if (faces.length > 0) {
-          console.log(faces[0].emotions);
+          // var musicControl=document.getElementById('musicControl');
           $.each(faces[0].emotions, function(key, value) {
-              // console.log("key="+key+", value="+ value);
-              if(key=='joy' || key=='surprise'){
-                if(value>80){
-                  // console.log(value);
-                  console.log("play sad music");
-                  document.getElementById('musicControlSource').src="music/sad.mp3";
-                  document.getElementById('musicControl').load();
-                  setTimeout(
-                      function(){
-                        document.getElementById('musicControl').play();
-                    }, 1000);
-                }
-              }
-              if(key=='sadness'){
-                if(value>0.80){
-                  // console.log(value);
+              // console.log(key, value);
+              if(key=='joy'){
+                if(value>0.05 ){
                   console.log("play happy music");
-                  document.getElementById('musicControlSource').src="music/happy.mp3";
-                  document.getElementById('musicControl').load();
-                  setTimeout(
-                      function(){
-                        document.getElementById('musicControl').play();
-                    }, 1000);
+                  document.getElementById('musicControl').play();
                 }
               }
           });
@@ -123,8 +105,8 @@
           // log('#results', "Expressions: " + JSON.stringify(faces[0].expressions, function(key, val) {
             // return val.toFixed ? Number(val.toFixed(0)) : val;
           // }));
-          // log('#results', "Emoji: " + faces[0].emojis.dominantEmoji);
-          log('#emoticon',""+faces[0].emojis.dominantEmoji);
+          //log('#results', "Emoji: " + faces[0].emojis.dominantEmoji);
+          log('#emoticon', "" + faces[0].emojis.dominantEmoji);
 
           drawFeaturePoints(image, faces[0].featurePoints);
         }
