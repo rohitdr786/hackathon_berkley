@@ -134,21 +134,21 @@
                     song=1;
                     console.log("In sadness section");
                     if(songPlaying=='1'){
-                      document.getElementById(songPlaying).class="list-group-item";
+                      document.getElementById(songPlaying).classList.remove("active");
                       songPlaying='2';
-                      document.getElementById(songPlaying).class="list-group-item active";
+                      document.getElementById(songPlaying).classList.add("active");
                       musicControlSource.src="music/sad2.mp3";
                     }
                     else if(songPlaying=='2'){
-                      document.getElementById(songPlaying).class="list-group-item";
+                      document.getElementById(songPlaying).classList.remove("active");
                       songPlaying='3';
-                      document.getElementById(songPlaying).class="list-group-item active";
+                      document.getElementById(songPlaying).classList.add("active");
                       musicControlSource.src="music/sad3.mp3";
                     }
                     else{
-                      document.getElementById(songPlaying).class="list-group-item";
+                      document.getElementById(songPlaying).classList.remove("active");
                       songPlaying='1';
-                      document.getElementById(songPlaying).class="list-group-item active";
+                      document.getElementById(songPlaying).classList.add("active");
                       musicControlSource.src=="music/sad.mp3"
                     }
                     musicControl.load();
@@ -164,19 +164,19 @@
                     console.log("In angry section");
                     song=1;
                     if(songPlaying=='4'){
-                      document.getElementById(songPlaying).class="list-group-item";
+                      document.getElementById(songPlaying).classList.remove("active");
                       songPlaying='5';
-                      document.getElementById(songPlaying).class="list-group-item active";
+                      document.getElementById(songPlaying).classList.add("active");
                       musicControlSource.src="music/angry2.mp3";
                     }else if(songPlaying=='5'){
-                      document.getElementById(songPlaying).class="list-group-item";
+                      document.getElementById(songPlaying).classList.remove("active");
                       songPlaying='6';
-                      document.getElementById(songPlaying).class="list-group-item active";
+                      document.getElementById(songPlaying).classList.add("active");
                       musicControlSource.src="music/angry3.mp3";
                     }else{
-                      document.getElementById(songPlaying).class="list-group-item";
+                      document.getElementById(songPlaying).classList.remove("active");
                       songPlaying='4';
-                      document.getElementById(songPlaying).class="list-group-item active";
+                      document.getElementById(songPlaying).classList.add("active");
                       musicControlSource.src="music/angry.mp3";
                     }
                     musicControl.load();
